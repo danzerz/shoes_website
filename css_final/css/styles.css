@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
+
+/* Global Styles */
+* {
+  font-family: "Poppins", sans-serif; /* Apply Poppins font */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  outline: none; /* Remove outline */
+  border: none; /* Remove border */
+  text-decoration: none; /* Remove text decoration */
+  text-transform: capitalize; /* Capitalize text */
+  transition: 0.2s linear; /* Smooth transition for all properties */
+}
+
+html {
+  font-size: 62.5%; /* Set base font size to 10px for easier rem calculations */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  scroll-padding-top: 7rem; /* Padding top for scroll position */
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+/* Icon Sizes */
+.size {
+  height: 25px; /* Icon height */
+  width: 25px; /* Icon width */
+}
+
+.logo {
+  height: 40px; /* Logo height */
+  width: 40px; /* Logo width */
+  color: rgb(8, 96, 8); /* Logo color */
+  font-weight: bolder; /* Bold font weight */
+}
+
+.logo img {
+  height: 35px; /* Logo image height */
+  width: 35px; /* Logo image width */
+}
+
+/* Header Styles */
+.header {
+  max-width: 98%; /* Maximum width */
+  top: 1.5rem; /* Top position */
+  left: 50%; /* Center horizontally */
+  position: relative; /* Relative positioning */
+  transform: translateX(-50%); /* Center horizontally using transform */
+  z-index: 1000; /* Ensure on top */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  padding: 1.5rem 5rem; /* Padding */
+  background-color: rgb(244, 244, 244); /* Background color */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+.header .icons {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between items */
+}
+
+.size:hover {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(93%) saturate(529%)
+    hue-rotate(75deg) brightness(92%) contrast(89%); /* Hover effect for icons */
+}
+
+.icons a .fill:hover {
+  filter: brightness(0) saturate(100%) invert(16%) sepia(78%) saturate(7183%)
+    hue-rotate(357deg) brightness(97%) contrast(112%); /* Hover effect for fill icons */
+}
+
+/* Search Form Styles */
+.header .search-form {
+  position: absolute; /* Absolute positioning */
+  top: 115%; /* Position below header */
+  right: -140%; /* Initially hidden */
+  max-width: 50rem; /* Maximum width */
+  height: 5.5rem; /* Height */
+  background: #fff; /* White background */
+  border-radius: 0.5rem; /* Rounded corners */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items vertically */
+  overflow: hidden; /* Hide overflow */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Box shadow */
+  border: 0.1rem solid rgba(0, 0, 0, 0.3); /* Border */
+}
+
+.header .search-form.active {
+  right: 2rem; /* Move into view when active */
+  transition: 0.4s linear; /* Smooth transition */
+}
+
+.header .search-form input {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  font-size: 1.6rem; /* Font size */
+  text-transform: none; /* No text transformation */
+  color: #45c287; /* Text color */
+  padding: 0 1.2rem; /* Padding */
+}
+
+.header .search-form label {
+  font-size: 2.2rem; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  margin-right: 1.7rem; /* Margin right */
+}
+
+.header .icons div,
+.header .icons a {
+  font-size: 2.5rem; /* Font size */
+  margin-left: 2rem; /* Margin left */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Heading Styles */
+.heading {
+  font-size: 3.5rem; /* Font size */
+  color: #13633d; /* Text color */
+  padding-bottom: 2rem; /* Padding bottom */
+  text-align: center; /* Center text */
+}
+
+.heading span {
+  color: #10221b; /* Different color for span */
+}
+
+/* Navbar Styles */
+.navbar a {
+  color: #13633d; /* Link color */
+  font-size: 1.5rem; /* Font size */
+  padding: 20px; /* Padding */
+  font-weight: bolder; /* Bold font weight */
+}
+
+.navbar a:hover {
+  border-bottom: 2px solid #13633d; /* Border bottom on hover */
+  background-color: rgb(231, 231, 231); /* Background color on hover */
+}
+
+/* Small Screen Navbar Styles */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Initially hidden */
+    flex-direction: column; /* Column layout */
+    width: 100%; /* Full width */
+    position: absolute; /* Absolute positioning */
+    top: 60px; /* Position below header */
+    left: 0; /* Align left */
+    background-color: #fff; /* White background */
+    z-index: 1000; /* Ensure on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow */
+  }
+
+  .navbar.show {
+    display: flex; /* Display flex when shown */
+  }
+
+  .navbar a {
+    padding: 15px; /* Padding */
+    color: #13633d; /* Link color */
+    font-size: 1.5rem; /* Font size */
+    text-align: center; /* Center text */
+    border-bottom: 1px solid #ddd; /* Border bottom */
+  }
+
+  .navbar a:hover {
+    background-color: #f4f4f4; /* Background color on hover */
+  }
+}
+
+/* Section 1 Styles */
+.sec-1 {
+  margin: 10em; /* Margin */
+}
+
+.slides-container {
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Column layout */
+  align-items: center; /* Center items */
+  margin-top: 20px; /* Margin top */
+}
+
+.main-container {
+  margin-top: 20em; /* Margin top */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  font-family: "Muli", sans-serif; /* Different font */
+}
+
+.container {
+  display: flex; /* Flexbox layout */
+  width: 90vw; /* Width */
+}
+
+.panel {
+  background-size: contain; /* Background size */
+  background-position: center; /* Background position */
+  background-repeat: no-repeat; /* No repeat */
+  height: 60vh; /* Height */
+  border-radius: 50px; /* Rounded corners */
+  color: #13633d; /* Text color */
+  cursor: pointer; /* Pointer cursor */
+  flex: 0.5; /* Flex grow */
+  margin: 10px; /* Margin */
+  position: relative; /* Relative positioning */
+  transition: flex 0.7s ease-in; /* Smooth transition for flex */
+}
+
+.panel h3 {
+  font-size: 24px; /* Font size */
+  position: absolute; /* Absolute positioning */
+  top: 99%; /* Position at bottom */
+  left: 20%; /* Position left */
+  margin: 0; /* No margin */
+  opacity: 0; /* Initially hidden */
+}
+
+.panel.active {
+  flex: 5; /* Expand when active */
+}
+
+.panel.active h3 {
+  opacity: 1; /* Show heading when active */
+  transition: opacity 0.3s ease-in 0.4s; /* Smooth transition for opacity */
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw; /* Full width */
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none; /* Hide panels on small screens */
+  }
+}
+
+/* Text Styles */
+.content {
+  text-align: center; /* Center text */
+  position: absolute; /* Absolute positioning */
+  padding: 25px; /* Padding */
+  font-size: 20px; /* Font size */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items */
+  flex-direction: column; /* Column layout */
+}
+
+.slides-container .content h3 {
+  color: #13633d; /* Text color */
+  font-size: 40px; /* Font size */
+}
+
+/* Product Styles */
+.box-container {
+  text-align: center; /* Center text */
+  padding: 2rem; /* Padding */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Column layout */
+  align-items: center; /* Center items */
+  margin-top: 6em; /* Margin top */
+}
+
+.box-text-1 {
+  font-size: 4em; /* Font size */
+  margin-bottom: 20px; /* Margin bottom */
+}
+
+.box-text-1 span {
+  color: #13633d; /* Text color */
+}
+
+.box {
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  height: 60%; /* Height */
+  width: 60%; /* Width */
+  gap: 20px; /* Gap between items */
+}
+
+.item {
+  border: 1px solid #ddd; /* Border */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  cursor: pointer; /* Pointer cursor */
+}
+
+.item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Box shadow on hover */
+}
+
+.image img {
+  width: 100%; /* Full width */
+}
+
+.content {
+  padding: 10px; /* Padding */
+}
+
+.content h3 {
+  font-size: 14px; /* Font size */
+  margin: 10px 0; /* Margin */
+}
+
+@media (max-width: 768px) {
+  .box {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(1, 1fr); /* Single column */
+    height: 60%; /* Height */
+    width: 60%; /* Width */
+    gap: 20px; /* Gap between items */
+  }
+}
+
+/* Banner Section Styles */
+.banner-main {
+  margin-top: 4em; /* Margin top */
+}
+
+.banner-container {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Wrap items */
+  gap: 20px; /* Gap between items */
+  justify-content: center; /* Center items */
+  padding: 20px; /* Padding */
+}
+
+.banner-head {
+  text-align: center; /* Center text */
+  font-size: 4em; /* Font size */
+  color: #13633d; /* Text color */
+}
+
+.banner {
+  position: relative; /* Relative positioning */
+  height: 100%; /* Full height */
+  width: 500px; /* Width */
+  border: 1px solid #ddd; /* Border */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.banner:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+}
+
+.banner img {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Cover object */
+}
+
+.content-3 {
+  position: absolute; /* Absolute positioning */
+  bottom: 20px; /* Position at bottom */
+  left: 20px; /* Position left */
+  color: #ba0707; /* Text color */
+}
+
+.green-text {
+  color: #13633d; /* Text color */
+  font-weight: bold; /* Bold font weight */
+  font-size: 18px; /* Font size */
+}
+
+h3 {
+  margin: 10px 0; /* Margin */
+  font-size: 16px; /* Font size */
+}
+
+/* Button Styles */
+.btn {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center items */
+  padding: 10px 20px; /* Padding */
+  color: #13633d; /* Text color */
+  background-color: #13633d; /* Background color */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  color: #fff; /* Text color */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 16px; /* Font size */
+  font-weight: bolder; /* Bold font weight */
+}
+
+.btn:hover {
+  background-color: rgba(231, 231, 231, 0.064); /* Background color on hover */
+  border: 1px solid #13633d; /* Border on hover */
+  color: #13633d; /* Text color on hover */
+}
+
+/* Contact Section Styles */
+.contact {
+  margin-top: em; /* Margin top */
+}
+
+.contact .row {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Wrap items */
+  gap: 1.5rem; /* Gap between items */
+}
+
+.contact .row .image {
+  flex: 1 1 30rem; /* Flex properties */
+}
+
+.contact .row .image img {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Cover object */
+}
+
+.contact .row form {
+  flex: 1 1 42rem; /* Flex properties */
+  padding: 2rem; /* Padding */
+  border: 0.1rem solid rgba(0, 0, 0, 0.3); /* Border */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Box shadow */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+.contact .row form h3 {
+  font-size: 3rem; /* Font size */
+  padding-bottom: 1rem; /* Padding bottom */
+  color: #13633d; /* Text color */
+}
+
+.contact .row form .inputBox {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Wrap items */
+  justify-content: space-between; /* Space between items */
+}
+
+.contact .row form .inputBox input {
+  width: 49%; /* Width */
+}
+
+.contact .row form .inputBox input,
+.contact .row form textarea {
+  border: 0.1rem solid rgba(0, 0, 0, 0.3); /* Border */
+  padding: 1rem 1.2rem; /* Padding */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-size: 1.6rem; /* Font size */
+  color: #10221b; /* Text color */
+  text-transform: none; /* No text transformation */
+  margin: 0.7rem 0; /* Margin */
+}
+
+.contact .row form textarea {
+  height: 15rem; /* Height */
+  resize: none; /* No resize */
+  width: 100%; /* Full width */
+}
+
+/* Footer Styles */
+.footer {
+  background: #f4fffa; /* Background color */
+  color: white; /* Text color */
+  margin-top: 8rem; /* Margin top */
+}
+
+.footer .box-container1 {
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(25rem, 1fr)
+  ); /* Responsive columns */
+  gap: 1.5rem; /* Gap between items */
+}
+
+.footer .box-container1 .box1 h3 {
+  font-size: 2.2rem; /* Font size */
+  padding: 1rem 0; /* Padding */
+}
+
+.footer .box-container1 .box1 p {
+  font-size: 1.5rem; /* Font size */
+  padding: 1rem 0; /* Padding */
+  line-height: 2; /* Line height */
+}
+
+.footer .box-container1 .box1 a {
+  display: block; /* Block display */
+  font-size: 1.4rem; /* Font size */
+  padding: 1rem 0; /* Padding */
+}
+
+.footer .box-container1 .box1 a:hover {
+  border-bottom: 2px solid rgb(231, 231, 231); /* Border bottom on hover */
+}
+
+.credit {
+  text-align: center; /* Center text */
+  color: #fff; /* Text color */
+  font-size: 2rem; /* Font size */
+}
+
+.footer {
+  background-color: #004d00; /* Dark green background */
+  color: #ffffff; /* Light text color */
+  padding: 40px 20px; /* Padding */
+}
+
+.box-container1 {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Wrap items */
+  gap: 20px; /* Gap between items */
+  justify-content: center; /* Center items */
+}
+
+.box1 {
+  flex: 1; /* Flex grow */
+  min-width: 200px; /* Minimum width */
+  max-width: 250px; /* Maximum width */
+  margin: 10px; /* Margin */
+}
+
+.box1 h3 {
+  font-size: 20px; /* Font size */
+  margin-bottom: 15px; /* Margin bottom */
+  border-bottom: 2px solid white; /* Border bottom */
+  padding-bottom: 10px; /* Padding bottom */
+}
+
+.box1 p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.box1 a {
+  display: block;
+  color: #f1f1f1;
+  text-decoration: none;
+  margin: 8px 0;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.box1 a:hover {
+  color: #a8d0a8; /* Light green color for hover effect */
+}
+
+.box-text-1 a:last-child {
+  margin-bottom: 0;
+}
