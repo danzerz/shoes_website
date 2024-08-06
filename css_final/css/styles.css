@@ -277,6 +277,7 @@ html {
   height: 60%; /* Height */
   width: 60%; /* Width */
   gap: 20px; /* Gap between items */
+  position: relative;
 }
 
 .item {
@@ -301,8 +302,13 @@ html {
 }
 
 .content h3 {
-  font-size: 14px; /* Font size */
+  font-size: 70%; /* Font size */
   margin: 10px 0; /* Margin */
+}
+.content div.price {
+  font-size: 80%;
+  position: absolute;
+  margin: 21%;
 }
 
 @media (max-width: 768px) {
